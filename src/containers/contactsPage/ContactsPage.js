@@ -12,9 +12,9 @@ export const ContactsPage = (props) => {
   const [newContacts, setNewContacts] = useState([])
   const [currentContacts, setCurrentContacts] = useState([])
 
-  const [currentName, setCurrentName] = useState("engineer eddie")
-  const [currentPhone, setCurrentPhone] = useState(" 911 ")
-  const [currentEmail, setCurrentEmail] = useState(" hamsterturd@youeatpoopy.com ")
+  const [currentName, setCurrentName] = useState("")
+  const [currentPhone, setCurrentPhone] = useState("")
+  const [currentEmail, setCurrentEmail] = useState("")
 
   const [dupliacateName, setDuplicateName] = useState(false)
 
@@ -32,6 +32,7 @@ export const ContactsPage = (props) => {
   const handleSubmit = (e) => {
     if (dupliacateName === false) {
       props.addContact(currentName, currentPhone, currentEmail)
+      console.log()
       setCurrentName("")
       setCurrentPhone("")
       setCurrentEmail("")

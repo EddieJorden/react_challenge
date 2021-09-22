@@ -2,24 +2,23 @@ import React from "react";
 
 const ContactForm = ({
   name,
-  setName,
+  setCurrentName,
   phone,
-  setPhone,
+  setCurrentPhone,
   email,
-  setEmail,
+  setCurrentEmail,
   handleSubmit
 }) => {
-  console.log(name)
-  console.log(phone)
-  console.log(email)
+  console.log('setName', setCurrentName)
+  
     
   return (
     
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={name} onChange={(e) => {setName(e.target.value)}}/>
-        <input type="tel" value={phone} onChange={(e) => {setPhone(e.target.value)}}/>
-        <input type="email" value={email} onChange={(e) => {setEmail(e.target.value)}}/>
+        <input type="text" value={name} onChange={(e) => {setCurrentName(e.target.value)}}/>
+        <input type="tel" value={phone} onChange={(e) => {setCurrentPhone(e.target.value)}}/>
+        <input type="email" value={email} onChange={(e) => {setCurrentEmail(e.target.value)}}/>
         <input type="submit"/>
       </form>
     </div>
