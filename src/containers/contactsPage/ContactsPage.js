@@ -32,7 +32,6 @@ export const ContactsPage = (props) => {
   const handleSubmit = (e) => {
     if (dupliacateName === false) {
       props.addContact(currentName, currentPhone, currentEmail)
-      console.log()
       setCurrentName("")
       setCurrentPhone("")
       setCurrentEmail("")

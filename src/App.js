@@ -4,6 +4,7 @@ import { Switch, Route, Redirect, NavLink } from "react-router-dom";
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
+
 function App() {
   /*
   Define state variables for 
@@ -47,7 +48,6 @@ function App() {
   addAppointment('Yuliya', '5171615', 'ymak@email.com')
   console.log('appState: appointments', appointments)
   
-
   return (
     <>
       <nav>
@@ -76,9 +76,5 @@ function App() {
     </>
   );
 }
-
-
-
-console.log()
 
 export default App;
