@@ -7,7 +7,7 @@ export const Tile = (props) => {
       <span><div className="tile-title">{props.contact.name}</div></span>
       <span><div className="tile">{props.contact.phone}</div></span>
       <span><div className="tile">{props.contact.email}</div></span>
-      </div>
+    </div>
   );
 };
 

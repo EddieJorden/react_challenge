@@ -10,6 +10,7 @@ const TileList = (props) => {
       {props.contactArray.map((each, i) => <Tile key={i} contact={each}/>)}
     </div>
   )
+  return "nothing to return here"
 }
 
 export default TileList
