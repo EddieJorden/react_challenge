@@ -7,21 +7,18 @@ export const ContactsPage = (props) => {
   Define state variables for 
   contact info and duplicate check
   */
-  console.log('props', props)
-  console.log('props.contacts from contact page', props.contacts)
-  console.log('props.duplicateName', props.duplicateName)
 
-  useEffect(() => {
-    for (let i = 0; i < props.contacts.length; i++) {
-      if (props.contacts[i].name === props.currentName) {
-        props.setDuplicateName(true)
-      }else props.setDuplicateName(false)
-    }
-  })
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
   */
+ useEffect(() => {
+   for (let i = 0; i < props.contacts.length; i++) {
+     if (props.contacts[i].name === props.currentName) {
+       props.setDuplicateName(true)
+     }else props.setDuplicateName(false)
+   }
+ })
 
   return (
     <div>

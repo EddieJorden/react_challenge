@@ -1,7 +1,6 @@
 import React from "react";
 
 export const Tile = (props) => {
-  console.log("Tile return", props.contact)
   return (
     <div>
       <span><div className="tile-title">{props.contact.name}</div></span>

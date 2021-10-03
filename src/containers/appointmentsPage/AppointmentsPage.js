@@ -2,28 +2,18 @@ import React, {useState} from "react";
 import AppointmentForm from "../../components/appointmentForm/AppointmentForm";
 import TileList from "../../components/tileList/TileList";
 
-export const AppointmentsPage = ({contacts, appointments, addAppointment}) => {
+export const AppointmentsPage = ({contacts, appointments, setAppointments, addAppointment, setCurrentTitle, currentTitle, title, setTitle}) => {
   /*
   Define state variables for 
   appointment info
   */
-  const [currentTitle, setCurrentTitle] = useState("")
   const [contact, setContact] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  // const [contacts, setContacts] =  useState("")
-
-  // console.log('contacts from appointmentsPage', contacts)
-
   const handleSubmit = (e) => {
-    // e.preventDefault();
     
-    /*
-    Add contact info and clear data  
-    */
-    // contacts.push(e)
-    return 'handleSubmit function here'
-  };
+    
+  }
 
   return (
     <div>
@@ -41,6 +31,7 @@ export const AppointmentsPage = ({contacts, appointments, addAppointment}) => {
           contacts={contacts}
           handleSubmit={handleSubmit}
           appointments={appointments}
+          setAppointments={setAppointments}
           addAppointment={addAppointment}
         />
       </section>

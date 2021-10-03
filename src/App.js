@@ -11,13 +11,17 @@ function App() {
   contacts and appointments 
   */
   const [contacts, setContacts] = useState([])
-  const [appointments, setAppointments] = useState([{}])
+  const [appointments, setAppointments] = useState([])
   const [newContacts, setNewContacts] = useState([])
   const [currentContacts, setCurrentContacts] = useState([])
   const [currentName, setCurrentName] = useState("")
   const [currentPhone, setCurrentPhone] = useState("")
   const [currentEmail, setCurrentEmail] = useState("")
   const [dupliacateName, setDuplicateName] = useState(false)
+  const [title, setTitle] = useState("")
+  const [currentTitle, setCurrentTitle] = useState("")
+  const [date, setDate] = useState("")
+  const [time, setTime] = useState("")
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -57,7 +61,6 @@ function App() {
     */
   };
   
-
   const addAppointment = (name, phone, email) => {
     appointments.push({
       name: name, 
@@ -65,11 +68,7 @@ function App() {
       email: email
     })
   }
-  
-  console.log('appState: contacts', contacts)
-  console.log('appState: appointments', appointments)
-  
-  
+
   return (
     
     <>
@@ -106,10 +105,12 @@ function App() {
             {/* Add props to AppointmentsPage */}
             <AppointmentsPage
               appointments={appointments}
+              setAppointments={setAppointments}
               contacts={contacts}
-              addAppointment={addAppointment}
-              handleSubmit={handleSubmit}
-
+              currentTitle={currentTitle}
+              setCurrentTitle={setCurrentTitle}
+              title={title}
+              setTitle={setTitle}
             />
           </Route>
         </Switch>

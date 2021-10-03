@@ -1,21 +1,27 @@
 import React from "react";
+import { AppointmentsPage } from "../../containers/appointmentsPage/AppointmentsPage";
 import { ContactPicker } from "../contactPicker/ContactPicker"
 
 const AppointmentForm = ({
   contacts,
   title,
   setTitle,
+  currentTitle,
+  setCurrentTitle,
   contact,
   setContact,
   date,
   setDate,
+  currentDate,
+  setCurrentDate,
   time,
   setTime,
+  currentTime,
+  setCurrentTime,
+  appointments,
+  setAppointments,
   handleSubmit
 }) => {
-  console.log("contacts from appointmentForm", contacts)
-  console.log("handleSubmit from appointmentForm", handleSubmit)
-
   const getTodayString = () => {
     const [month, day, year] = new Date()
       .toLocaleDateString("en-US")
@@ -28,22 +34,22 @@ const AppointmentForm = ({
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          value="title"
-          onChange={handleSubmit}
+          value={currentTitle}
+          onChange={(e) => {setCurrentTitle(e.target.value)}}
         />
         <input
           type="text"
-          value="date"
-          onChange={(e) => {setDate(e.target.value)}}
+          value={currentDate}
+          onChange={(e) => {setCurrentDate(e.target.value)}}
           min={getTodayString()}
         />
         <input
           type="text"
-          value="time"
-          onChange={(e) => {setTime(e.target.value)}}
+          value={currentTime}
+          onChange={(e) => {setCurrentTime(e.target.value)}}
         />
-        <input type="submit" onSubmit={handleSubmit}/>
         <ContactPicker contacts={contacts} handleSubmit={handleSubmit}/>
+        <input type="submit"/>
       </form>
     </div>
   );
