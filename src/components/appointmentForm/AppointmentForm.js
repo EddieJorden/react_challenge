@@ -22,6 +22,8 @@ const AppointmentForm = ({
   setAppointments,
   handleSubmit
 }) => {
+
+  
   const getTodayString = () => {
     const [month, day, year] = new Date()
       .toLocaleDateString("en-US")

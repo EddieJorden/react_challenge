@@ -31,7 +31,9 @@ export const ContactsPage = (props) => {
           currentName={props.currentName}
           setCurrentName={props.setCurrentName} 
           setCurrentPhone={props.setCurrentPhone} 
+          currentPhone={props.currentPhone}
           setCurrentEmail={props.setCurrentEmail} 
+          currrentEmail={props.currentEmail}
           handleSubmit={props.handleSubmit}/>
       </section>
       <hr />

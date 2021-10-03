@@ -23,6 +23,11 @@ function App() {
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
 
+  console.log('currentName from app.js', currentName)
+  console.log('currentPhone from app.js', currentPhone)
+  console.log('currentEmail from app.js', currentEmail)
+  console.log('title from app.js', title)
+
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
@@ -46,8 +51,9 @@ function App() {
     if ((dupliacateName === false) && (currentName !== "")) {
       contacts.push({name: currentName, phone: currentPhone, email: currentEmail})
       setCurrentName('')
-      setCurrentPhone(null)
+      setCurrentPhone('')
       setCurrentEmail('')
+
     }
     
     // if the duplicate state variable is false, 
@@ -61,13 +67,13 @@ function App() {
     */
   };
   
-  const addAppointment = (name, phone, email) => {
-    appointments.push({
-      name: name, 
-      phone: phone,
-      email: email
-    })
-  }
+  // const addAppointment = (title, date, time) => {
+  //   appointments.push({
+  //     title: title,
+  //     date: date,
+  //     time: time,
+  //   })
+  // }
 
   return (
     

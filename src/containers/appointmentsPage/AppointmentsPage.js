@@ -10,8 +10,10 @@ export const AppointmentsPage = ({contacts, appointments, setAppointments, addAp
   const [contact, setContact] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  const handleSubmit = (e) => {
-    
+
+  const handleSubmit = () => {
+    setTitle(currentTitle)
+    console.log('title', title)
     
   }
 

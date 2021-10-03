@@ -16,7 +16,6 @@ const ContactForm = ({
   
     
   return (
-    
     <div>
       <form onSubmit={handleSubmit}>
         <input type="text" value={currentName} onChange={(e) => {setCurrentName(e.target.value)}}/>
@@ -25,7 +24,6 @@ const ContactForm = ({
         <input type="submit"/>
       </form>
     </div>
-      
   );
 };
 
