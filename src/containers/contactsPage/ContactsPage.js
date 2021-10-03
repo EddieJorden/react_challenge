@@ -15,12 +15,9 @@ export const ContactsPage = (props) => {
     for (let i = 0; i < props.contacts.length; i++) {
       if (props.contacts[i].name === props.currentName) {
         props.setDuplicateName(true)
-      } else props.setDuplicateName(false)
+      }else props.setDuplicateName(false)
     }
   })
-
-
-
   /*
   Using hooks, check for contact name in the 
   contacts array variable in props
@@ -33,7 +30,8 @@ export const ContactsPage = (props) => {
         <ContactForm 
           name={props.currentName} 
           phone={props.currentPhone} 
-          email={props.currentEmail} 
+          email={props.currentEmail}
+          currentName={props.currentName}
           setCurrentName={props.setCurrentName} 
           setCurrentPhone={props.setCurrentPhone} 
           setCurrentEmail={props.setCurrentEmail} 

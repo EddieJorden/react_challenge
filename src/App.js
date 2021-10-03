@@ -10,7 +10,7 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
-  const [contacts, setContacts] = useState([{name: "eddie", phone: 1112222, email: "email@email"}])
+  const [contacts, setContacts] = useState([])
   const [appointments, setAppointments] = useState([{}])
   const [newContacts, setNewContacts] = useState([])
   const [currentContacts, setCurrentContacts] = useState([])
@@ -39,18 +39,18 @@ function App() {
   
 
   const handleSubmit = (e) => {
-    if (dupliacateName === false) {
+    if ((dupliacateName === false) && (currentName !== "")) {
       contacts.push({name: currentName, phone: currentPhone, email: currentEmail})
-      setCurrentName("")
-      setCurrentPhone("")
-      setCurrentEmail("")
+      setCurrentName('')
+      setCurrentPhone(null)
+      setCurrentEmail('')
     }
+    
     // if the duplicate state variable is false, 
     // call the callback function for adding a new contact 
     // (passed via props) using the data from the form.
     e.preventDefault();
-    if (true) {
-    }
+    
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
@@ -92,8 +92,11 @@ function App() {
               contacts={contacts}
               setContacts={setContacts}
               handleSubmit={handleSubmit}
+              currentName={currentName}
               setCurrentName={setCurrentName}
+              currentPhone={currentPhone}
               setCurrentPhone={setCurrentPhone}
+              currentEmail={currentEmail}
               setCurrentEmail={setCurrentEmail}
               setDuplicateName={setDuplicateName}
               duplicateName={dupliacateName}

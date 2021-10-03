@@ -7,7 +7,7 @@ const TileList = (props) => {
   console.log('props.contacts from tileList',  props.contacts)
   return(
     <div>
-      {/* {props.contacts.map((each, i) => <Tile key={i} contact={each}/>)} */}
+      {props.contacts.map((each, i) => <Tile key={i} contact={each}/>)}
     </div>
   )
   return "nothing to return here"
