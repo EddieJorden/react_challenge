@@ -14,6 +14,7 @@ const AppointmentForm = ({
   handleSubmit
 }) => {
   console.log("contacts from appointmentForm", contacts)
+  console.log("handleSubmit from appointmentForm", handleSubmit)
 
   const getTodayString = () => {
     const [month, day, year] = new Date()
@@ -28,7 +29,7 @@ const AppointmentForm = ({
         <input
           type="text"
           value="title"
-          onChange={(e) => {setTitle(e.target.value)}}
+          onChange={handleSubmit}
         />
         <input
           type="text"

@@ -9,7 +9,7 @@ const ContactForm = ({
   setCurrentEmail,
   handleSubmit
 }) => {
-  console.log('setName', setCurrentName)
+  
   
     
   return (

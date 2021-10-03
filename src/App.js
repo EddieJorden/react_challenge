@@ -10,32 +10,53 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
-
-  const [contacts, setContacts] = useState([])
-  const [appointments, setAppointments] = useState([])
+  const [contacts, setContacts] = useState([{name: "eddie", phone: 1112222, email: "email@email"}])
+  const [appointments, setAppointments] = useState([{}])
+  const [newContacts, setNewContacts] = useState([])
+  const [currentContacts, setCurrentContacts] = useState([])
+  const [currentName, setCurrentName] = useState("")
+  const [currentPhone, setCurrentPhone] = useState("")
+  const [currentEmail, setCurrentEmail] = useState("")
+  const [dupliacateName, setDuplicateName] = useState(false)
 
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
   };
-
   /*
   Implement functions to add data to
   contacts and appointments
   */
-
-  const addContact = (name, phone, email) => {
-    contacts.push({
-      name: name,
-      phone: phone,
-      email: email
-    })
+  // const addContact = (name, phone, email) => {
+  //   contacts.push({
+  //     name: name,
+  //     phone: phone,
+  //     email: email
+  //   })
     
-  }
+  // }
 
-  addContact("eddie", "2186940", "eddie@eddiejorden.tech")
-  addContact('Yuliya', '5171615', 'ymak@email.com')
-  console.log('appState: contacts', contacts)
+  
+
+  const handleSubmit = (e) => {
+    if (dupliacateName === false) {
+      contacts.push({name: currentName, phone: currentPhone, email: currentEmail})
+      setCurrentName("")
+      setCurrentPhone("")
+      setCurrentEmail("")
+    }
+    // if the duplicate state variable is false, 
+    // call the callback function for adding a new contact 
+    // (passed via props) using the data from the form.
+    e.preventDefault();
+    if (true) {
+    }
+    /*
+    Add contact info and clear data
+    if the contact name is not a duplicate
+    */
+  };
+  
 
   const addAppointment = (name, phone, email) => {
     appointments.push({
@@ -44,11 +65,13 @@ function App() {
       email: email
     })
   }
-  addAppointment("eddie", "2186940", "eddie@eddiejorden.tech")
-  addAppointment('Yuliya', '5171615', 'ymak@email.com')
+  
+  console.log('appState: contacts', contacts)
   console.log('appState: appointments', appointments)
   
+  
   return (
+    
     <>
       <nav>
         <NavLink to={ROUTES.CONTACTS} activeClassName="active">
@@ -65,7 +88,16 @@ function App() {
           </Route>
           <Route path={ROUTES.CONTACTS}>
              {/* Add props to ContactsPage */}
-            <ContactsPage contacts={contacts} addContact={addContact}/>
+            <ContactsPage
+              contacts={contacts}
+              setContacts={setContacts}
+              handleSubmit={handleSubmit}
+              setCurrentName={setCurrentName}
+              setCurrentPhone={setCurrentPhone}
+              setCurrentEmail={setCurrentEmail}
+              setDuplicateName={setDuplicateName}
+              duplicateName={dupliacateName}
+            />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
             {/* Add props to AppointmentsPage */}
@@ -73,6 +105,8 @@ function App() {
               appointments={appointments}
               contacts={contacts}
               addAppointment={addAppointment}
+              handleSubmit={handleSubmit}
+
             />
           </Route>
         </Switch>

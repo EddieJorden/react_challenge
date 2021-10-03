@@ -2,16 +2,7 @@ import React, {useState} from "react";
 import AppointmentForm from "../../components/appointmentForm/AppointmentForm";
 import TileList from "../../components/tileList/TileList";
 
-export const AppointmentsPage = (props) => {
-  console.log("appointmentpage props", props)
-  console.log("appointmentpage props.appointments", props.appointments)
-
-  const testAppointemnt = {
-    name: "name",
-    phone: 1112223333,
-    email: "email@email.com"
-  }
-
+export const AppointmentsPage = ({contacts, appointments, addAppointment}) => {
   /*
   Define state variables for 
   appointment info
@@ -20,23 +11,18 @@ export const AppointmentsPage = (props) => {
   const [contact, setContact] = useState("")
   const [date, setDate] = useState("")
   const [time, setTime] = useState("")
-  const [contactArray, setContactArray] =  useState([])
+  // const [contacts, setContacts] =  useState("")
 
-  const currentAppointments = () => {
-    console.log("lists current appointments")
-  }
+  // console.log('contacts from appointmentsPage', contacts)
 
   const handleSubmit = (e) => {
     // e.preventDefault();
-    console.log('e', e)
+    
     /*
     Add contact info and clear data  
     */
-   
-    contactArray.push(e)
-   
-    
-   
+    // contacts.push(e)
+    return 'handleSubmit function here'
   };
 
   return (
@@ -52,18 +38,19 @@ export const AppointmentsPage = (props) => {
           setDate={setDate}
           time={time}
           setTime={setTime}
-          contactArray={contactArray}
-          setContactArray={setContactArray}
-          handleSubmit={handleSubmit()}
+          contacts={contacts}
+          handleSubmit={handleSubmit}
+          appointments={appointments}
+          addAppointment={addAppointment}
         />
       </section>
       <hr />
       <section>
         <h2>Appointments</h2>
         <TileList 
-          contactArray={props.contacts}
-          appointments={props.appointments}
-          addAppointment={props.addAppointment}
+          contacts={contacts}
+          appointments={appointments}
+          addAppointment={addAppointment}
         />
       </section>
     </div>
