@@ -10,23 +10,34 @@ function App() {
   Define state variables for 
   contacts and appointments 
   */
+
+  // contacts state variables and setters
   const [contacts, setContacts] = useState([])
   const [appointments, setAppointments] = useState([])
   const [newContacts, setNewContacts] = useState([])
-  const [currentContacts, setCurrentContacts] = useState([])
   const [currentName, setCurrentName] = useState("")
   const [currentPhone, setCurrentPhone] = useState("")
   const [currentEmail, setCurrentEmail] = useState("")
   const [dupliacateName, setDuplicateName] = useState(false)
-  const [title, setTitle] = useState("")
-  const [currentTitle, setCurrentTitle] = useState("")
-  const [date, setDate] = useState("")
-  const [time, setTime] = useState("")
 
   console.log('currentName from app.js', currentName)
   console.log('currentPhone from app.js', currentPhone)
   console.log('currentEmail from app.js', currentEmail)
-  console.log('title from app.js', title)
+
+  // appointments state variables and setters
+  const [title, setTitle] = useState("")
+  const [currentTitle, setCurrentTitle] = useState("")
+  const [date, setDate] = useState("")
+  const [currentDate, setCurrentDate] = useState(null)
+  const [time, setTime] = useState("")
+  const [currentTime, setCurrentTime] = useState(null)
+  const [currentContact, setCurrentContact] = useState([])
+
+  console.log('currentTitle', currentTitle)
+  console.log('currentDate', currentDate)
+  console.log('currentTime', currentTime)
+  console.log('currentContact', currentContact)
+
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -113,10 +124,20 @@ function App() {
               appointments={appointments}
               setAppointments={setAppointments}
               contacts={contacts}
+              currentContact={currentContact}
+              setCurrentContact={setCurrentContact}
               currentTitle={currentTitle}
               setCurrentTitle={setCurrentTitle}
               title={title}
               setTitle={setTitle}
+              date={date}
+              setDate={setDate}
+              currentDate={currentDate}
+              setCurrentDate={setCurrentDate}
+              time={time}
+              setTime={setTime}
+              currentTime={currentTime}
+              setCurrentTime={setCurrentTime}
             />
           </Route>
         </Switch>
