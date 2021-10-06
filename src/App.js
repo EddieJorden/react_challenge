@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import { Switch, Route, Redirect, NavLink } from "react-router-dom";
-
 import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage";
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
-
 
 function App() {
   /*
@@ -37,7 +35,6 @@ function App() {
   console.log('currentDate', currentDate)
   console.log('currentTime', currentTime)
   console.log('currentContact', currentContact)
-
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -87,7 +84,6 @@ function App() {
   // }
 
   return (
-    
     <>
       <nav>
         <NavLink to={ROUTES.CONTACTS} activeClassName="active">
