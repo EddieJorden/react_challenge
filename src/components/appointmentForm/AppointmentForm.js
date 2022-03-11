@@ -36,17 +36,20 @@ const AppointmentForm = ({
       <form onSubmit={handleSubmit}>
         <input
           type="text"
+          placeholder="title"
           value={currentTitle}
           onChange={(e) => {setCurrentTitle(e.target.value)}}
         />
         <input
           type="text"
+          placeholder="date"
           value={currentDate}
           onChange={(e) => {setCurrentDate(e.target.value)}}
           min={getTodayString()}
         />
         <input
           type="text"
+          placeholder="time"
           value={currentTime}
           onChange={(e) => {setCurrentTime(e.target.value)}}
         />

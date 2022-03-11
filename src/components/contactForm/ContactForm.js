@@ -11,16 +11,17 @@ const ContactForm = ({
   setCurrentEmail,
   currentEmail,
   handleSubmit
-}) => {
-  
-  
-    
+  }) => {
+
+    // <input type ="text" name="name" placeholder="default_value"></input>
+
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={currentName} onChange={(e) => {setCurrentName(e.target.value)}}/>
-        <input type="tel" value={currentPhone} onChange={(e) => {setCurrentPhone(e.target.value)}} />
-        <input type="email" value={currentEmail} onChange={(e) => {setCurrentEmail(e.target.value)}}/>
+        <input type="text" placeholder="name" value={currentName} onChange={(e) => {setCurrentName(e.target.value)}}/>
+        <input type="tel" placeholder="phone" value={currentPhone} onChange={(e) => {setCurrentPhone(e.target.value)}} />
+        <input type="email" placeholder="email" value={currentEmail} onChange={(e) => {setCurrentEmail(e.target.value)}}/>
         <input type="submit"/>
       </form>
     </div>

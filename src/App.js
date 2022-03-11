@@ -18,10 +18,6 @@ function App() {
   const [currentEmail, setCurrentEmail] = useState("")
   const [dupliacateName, setDuplicateName] = useState(false)
 
-  console.log('currentName from app.js', currentName)
-  console.log('currentPhone from app.js', currentPhone)
-  console.log('currentEmail from app.js', currentEmail)
-
   // appointments state variables and setters
   const [title, setTitle] = useState("")
   const [currentTitle, setCurrentTitle] = useState("")
@@ -31,11 +27,6 @@ function App() {
   const [currentTime, setCurrentTime] = useState(null)
   const [currentContact, setCurrentContact] = useState([])
 
-  console.log('currentTitle', currentTitle)
-  console.log('currentDate', currentDate)
-  console.log('currentTime', currentTime)
-  console.log('currentContact', currentContact)
-
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
@@ -44,44 +35,24 @@ function App() {
   Implement functions to add data to
   contacts and appointments
   */
-  // const addContact = (name, phone, email) => {
-  //   contacts.push({
-  //     name: name,
-  //     phone: phone,
-  //     email: email
-  //   })
-    
-  // }
-
-  
-
   const handleSubmit = (e) => {
     if ((dupliacateName === false) && (currentName !== "")) {
       contacts.push({name: currentName, phone: currentPhone, email: currentEmail})
       setCurrentName('')
       setCurrentPhone('')
       setCurrentEmail('')
-
     }
-    
+
     // if the duplicate state variable is false, 
     // call the callback function for adding a new contact 
     // (passed via props) using the data from the form.
     e.preventDefault();
-    
+
     /*
     Add contact info and clear data
     if the contact name is not a duplicate
     */
   };
-  
-  // const addAppointment = (title, date, time) => {
-  //   appointments.push({
-  //     title: title,
-  //     date: date,
-  //     time: time,
-  //   })
-  // }
 
   return (
     <>

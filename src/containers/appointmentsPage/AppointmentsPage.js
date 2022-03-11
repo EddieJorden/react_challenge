@@ -31,7 +31,6 @@ export const AppointmentsPage = ({
     setTitle("")
     setDate(null)
     setTime(null)
-    console.log('appointments', appointments)
   }
 
   return (
