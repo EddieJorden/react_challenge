@@ -36,7 +36,7 @@ const AppointmentForm = ({
       <form onSubmit={handleSubmit}>
         <input
           type="text"
-          placeholder="tile"
+          placeholder="title"
           value={currentTitle}
           onChange={(e) => {setCurrentTitle(e.target.value)}}
         />
