@@ -11,16 +11,14 @@ function App() {
 
   // contacts state variables and setters
   const [contacts, setContacts] = useState([])
+  console.log('contacts', contacts)
   const [appointments, setAppointments] = useState([])
   const [newContacts, setNewContacts] = useState([])
   const [currentName, setCurrentName] = useState("")
+  console.log('currentName on app', currentName)
   const [currentPhone, setCurrentPhone] = useState("")
   const [currentEmail, setCurrentEmail] = useState("")
   const [dupliacateName, setDuplicateName] = useState(false)
-
-  console.log('currentName from app.js', currentName)
-  console.log('currentPhone from app.js', currentPhone)
-  console.log('currentEmail from app.js', currentEmail)
 
   // appointments state variables and setters
   const [title, setTitle] = useState("")
@@ -30,11 +28,6 @@ function App() {
   const [time, setTime] = useState("")
   const [currentTime, setCurrentTime] = useState(null)
   const [currentContact, setCurrentContact] = useState([])
-
-  console.log('currentTitle', currentTitle)
-  console.log('currentDate', currentDate)
-  console.log('currentTime', currentTime)
-  console.log('currentContact', currentContact)
 
   const ROUTES = {
     CONTACTS: "/contacts",
@@ -57,7 +50,14 @@ function App() {
 
   const handleSubmit = (e) => {
     if ((dupliacateName === false) && (currentName !== "")) {
-      contacts.push({name: currentName, phone: currentPhone, email: currentEmail})
+      let contactObject = {
+        name: currentName,
+        phone: currentPhone,
+        email: currentEmail
+      }
+      setContacts([...contacts, contactObject])
+      // setContacts([...contacts, {name: currentName, phone: currentPhone, email: currentEmail}])
+
       setCurrentName('')
       setCurrentPhone('')
       setCurrentEmail('')
