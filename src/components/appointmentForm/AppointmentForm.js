@@ -1,15 +1,16 @@
 import React from "react";
-import { AppointmentsPage } from "../../containers/appointmentsPage/AppointmentsPage";
 import { ContactPicker } from "../contactPicker/ContactPicker"
 
 const AppointmentForm = ({
   contacts,
+  appointments,
   title,
   setTitle,
   currentTitle,
   setCurrentTitle,
   contact,
   setContact,
+  setCurrentContact,
   date,
   setDate,
   currentDate,
@@ -18,22 +19,21 @@ const AppointmentForm = ({
   setTime,
   currentTime,
   setCurrentTime,
-  appointments,
   setAppointments,
-  handleSubmit
+  createAppointment
 }) => {
-
   
-  const getTodayString = () => {
-    const [month, day, year] = new Date()
-      .toLocaleDateString("en-US")
-      .split("/");
-    return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
-  };
+  
+  // const getTodayString = () => {
+  //   const [month, day, year] = new Date()
+  //     .toLocaleDateString("en-US")
+  //     .split("/");
+  //   return `${year}-${month.padStart(2, "0")}-${day.padStart(2, "0")}`;
+  // };
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={createAppointment}>
         <input
           type="text"
           placeholder="title"
@@ -45,7 +45,7 @@ const AppointmentForm = ({
           placeholder="date"
           value={currentDate}
           onChange={(e) => {setCurrentDate(e.target.value)}}
-          min={getTodayString()}
+          // min={getTodayString()}
         />
         <input
           type="text"
@@ -53,7 +53,7 @@ const AppointmentForm = ({
           value={currentTime}
           onChange={(e) => {setCurrentTime(e.target.value)}}
         />
-        <ContactPicker contacts={contacts} handleSubmit={handleSubmit}/>
+        <ContactPicker contacts={contacts} setCurrentContact={setCurrentContact}/>
         <input type="submit"/>
       </form>
     </div>

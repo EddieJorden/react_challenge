@@ -12,14 +12,12 @@ const ContactForm = ({
   currentEmail,
   handleSubmit
 }) => {
-  
-  
-    
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <input type="text" value={currentName} placeholder="name" onChange={(e) => {setCurrentName(e.target.value)}}/>
-        <input type="tel" value={currentPhone} placeholder='phone' onChange={(e) => {setCurrentPhone(e.target.value)}} />
+        <input type="tel" value={currentPhone} placeholder='phone' onChange={(e) => {setCurrentPhone(e.target.value)}}/>
         <input type="email" value={currentEmail} placeholder='email' onChange={(e) => {setCurrentEmail(e.target.value)}}/>
         <input type="submit"/>
       </form>

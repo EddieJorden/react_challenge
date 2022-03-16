@@ -4,49 +4,32 @@ import { AppointmentsPage } from "./containers/appointmentsPage/AppointmentsPage
 import { ContactsPage } from "./containers/contactsPage/ContactsPage";
 
 function App() {
-  /*
-  Define state variables for 
-  contacts and appointments 
-  */
-
   // contacts state variables and setters
   const [contacts, setContacts] = useState([])
-  console.log('contacts', contacts)
-  const [appointments, setAppointments] = useState([])
-  const [newContacts, setNewContacts] = useState([])
+  const [currentContact, setCurrentContact] = useState('')
+
   const [currentName, setCurrentName] = useState("")
-  console.log('currentName on app', currentName)
   const [currentPhone, setCurrentPhone] = useState("")
   const [currentEmail, setCurrentEmail] = useState("")
   const [dupliacateName, setDuplicateName] = useState(false)
+  const [dupliacateTitle, setDuplicateTitle] = useState(false)
+
 
   // appointments state variables and setters
+  const [appointments, setAppointments] = useState([])
+  console.log('appointments in App.js', appointments)
   const [title, setTitle] = useState("")
   const [currentTitle, setCurrentTitle] = useState("")
+  console.log('currentTitle in App.js', currentTitle)
   const [date, setDate] = useState("")
   const [currentDate, setCurrentDate] = useState(null)
   const [time, setTime] = useState("")
   const [currentTime, setCurrentTime] = useState(null)
-  const [currentContact, setCurrentContact] = useState([])
 
   const ROUTES = {
     CONTACTS: "/contacts",
     APPOINTMENTS: "/appointments",
   };
-  /*
-  Implement functions to add data to
-  contacts and appointments
-  */
-  // const addContact = (name, phone, email) => {
-  //   contacts.push({
-  //     name: name,
-  //     phone: phone,
-  //     email: email
-  //   })
-    
-  // }
-
-  
 
   const handleSubmit = (e) => {
     if ((dupliacateName === false) && (currentName !== "")) {
@@ -56,32 +39,12 @@ function App() {
         email: currentEmail
       }
       setContacts([...contacts, contactObject])
-      // setContacts([...contacts, {name: currentName, phone: currentPhone, email: currentEmail}])
-
       setCurrentName('')
       setCurrentPhone('')
       setCurrentEmail('')
-
     }
-    
-    // if the duplicate state variable is false, 
-    // call the callback function for adding a new contact 
-    // (passed via props) using the data from the form.
     e.preventDefault();
-    
-    /*
-    Add contact info and clear data
-    if the contact name is not a duplicate
-    */
   };
-  
-  // const addAppointment = (title, date, time) => {
-  //   appointments.push({
-  //     title: title,
-  //     date: date,
-  //     time: time,
-  //   })
-  // }
 
   return (
     <>
@@ -99,7 +62,6 @@ function App() {
             <Redirect to={ROUTES.CONTACTS} />
           </Route>
           <Route path={ROUTES.CONTACTS}>
-             {/* Add props to ContactsPage */}
             <ContactsPage
               contacts={contacts}
               setContacts={setContacts}
@@ -115,7 +77,6 @@ function App() {
             />
           </Route>
           <Route path={ROUTES.APPOINTMENTS}>
-            {/* Add props to AppointmentsPage */}
             <AppointmentsPage
               appointments={appointments}
               setAppointments={setAppointments}
@@ -134,6 +95,8 @@ function App() {
               setTime={setTime}
               currentTime={currentTime}
               setCurrentTime={setCurrentTime}
+              dupliacateTitle={dupliacateTitle}
+              setDuplicateTitle={setDuplicateTitle}
             />
           </Route>
         </Switch>
