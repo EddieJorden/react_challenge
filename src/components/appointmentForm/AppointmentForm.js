@@ -38,7 +38,10 @@ const AppointmentForm = ({
           type="text"
           placeholder="title"
           value={currentTitle}
-          onChange={(e) => {setCurrentTitle(e.target.value)}}
+          onChange={(e) => {
+
+            setCurrentTitle(e.target.value)}
+          }
         />
         <input
           type="text"
