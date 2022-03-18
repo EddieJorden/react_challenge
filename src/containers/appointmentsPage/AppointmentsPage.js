@@ -21,8 +21,11 @@ export const AppointmentsPage = ({
   setTime,
   currentTime,
   setCurrentTime,
+  duplicateTitle,
   setDuplicateTitle
 }) => {
+  console.log('currentTitle in apptspage.js', currentTitle)
+  console.log('appointments in apptspage.js', appointments)
   /*
   Define state variables for 
   appointment info
@@ -31,14 +34,15 @@ export const AppointmentsPage = ({
 
   useEffect(() => {
     for (let i = 0; i < appointments.length; i++) {
-      if (appointments[i].name === currentTitle) {
+      console.log('appointments in useEffect', appointments)
+      if (appointments[i].title === currentTitle) {
         setDuplicateTitle(true)
       }else setDuplicateTitle(false)
     }
-  })
+  }, [appointments, currentTitle, setDuplicateTitle])
   
   const createAppointment = (e) => {
-    if((setDuplicateTitle === false) && (currentTitle !== "")) {
+    if(duplicateTitle === false && (currentTitle !== "")) {
       let appointmentObject = {
         title: currentTitle,
         date: currentDate,

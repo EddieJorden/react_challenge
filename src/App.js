@@ -12,15 +12,15 @@ function App() {
   const [currentPhone, setCurrentPhone] = useState("")
   const [currentEmail, setCurrentEmail] = useState("")
   const [dupliacateName, setDuplicateName] = useState(false)
-  const [dupliacateTitle, setDuplicateTitle] = useState(false)
+  const [duplicateTitle, setDuplicateTitle] = useState(false)
 
 
   // appointments state variables and setters
   const [appointments, setAppointments] = useState([])
-  console.log('appointments in App.js', appointments)
+  console.log('appointments', appointments)
   const [title, setTitle] = useState("")
-  const [currentTitle, setCurrentTitle] = useState("")
-  console.log('currentTitle in App.js', currentTitle)
+  const [currentTitle, setCurrentTitle] = useState(null)
+
   const [date, setDate] = useState("")
   const [currentDate, setCurrentDate] = useState(null)
   const [time, setTime] = useState("")
@@ -95,7 +95,7 @@ function App() {
               setTime={setTime}
               currentTime={currentTime}
               setCurrentTime={setCurrentTime}
-              dupliacateTitle={dupliacateTitle}
+              duplicateTitle={duplicateTitle}
               setDuplicateTitle={setDuplicateTitle}
             />
           </Route>
